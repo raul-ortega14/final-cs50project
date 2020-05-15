@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang = "en">
+
+<head>
+<style>
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: lightgray; 
+}
+
+li {
+  float: left;
+}
+
+li a, .dropbtn {
+  display: inline-block;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover, .dropdown:hover .dropbtn {
+  background-color: lightgreen;
+}
+
+li.dropdown {
+  display: inline-block;
+}
+
+.dropdown-content {
+  display:none;
+  position: absolute;
+  background-color:lightgray;
+  min-width:160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: lightgray
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {background-color: lightgreen;}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.active {
+  background-color: lightskyblue;
+}
+
+.header {
+  color:white;
+  padding: 10px;
+  text-align: center;
+  text-shadow: 1px 0 black, 0 1px black, 1px 0 black, 0 1px black;
+  background-image: url("https://www.lyrix.co.uk/wp-content/uploads/2017/05/library-books-header-1.jpg");
+}
+
+.header h1 {
+  font-size: 50px;
+}
+
+.body {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  margin: 40px;
+}
+
+#results {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#results td, #results th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#results tr:nth-child(even){background-color: lightskyblue;}
+
+#results tr:hover {background-color: lightgreen;}
+
+#results th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #4CAF50;
+  color: white;
+}
+
+.img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.abstract {
+  text-align: center;
+  font-size: 25px;
+  margin-left: 100px;
+  margin-right: 100px;
+}
+
+.navbar {
+  font-size: 15px;
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+}
+
+.welcome {
+  text-align: center;
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+}
+</style>
+
+<title>MyLibrary: {% block title %}{% endblock %}</title>
+
+</head>
+
+<body>
+  <div class="header">
+    <h1>MyLibrary</h1>
+  </div>
+	{% block main %}{% endblock %}
+</body>
+
+</html>

@@ -1,0 +1,69 @@
+{% extends "layout.html" %}
+{% block title %}
+    Search Author
+{% endblock %}
+
+{% block main %}
+<div style="padding:20px">
+    <ul class="navbar">
+      <li><a href="/">Homepage</a></li>
+      <li><a href="/catalogue">Catalogue</a></li>
+      <li class="dropdown"><a href="javascript:void(0)" class="dropbtn active">Search</a>
+        <div class="dropdown-content">
+          <a href="/search_title">Title</a>
+          <a href="/search_author">Author</a>
+          <a href="/search_label">Label</a>
+	  <a href="/search_lang">Language</a>
+        </div>
+      </li>
+      <li class="dropdown"><a href="javascript:void(0)" class="dropbtn">Update</a>
+        <div class="dropdown-content">
+          <a href="/add_book">Add Book</a>
+          <a href="/delete_book">Remove Book</a>
+        </div>
+      </li>
+    </ul>
+</div>
+
+<h1 class="body">Search books by Author:</h1>
+
+<form action="/search_author" class="body" method="post">
+  <fieldset>
+    <legend>Search by Author:</legend>
+    <label for="fname">Author:</label><br>
+    <input type="text" id="fname" name="author"><br><br>
+    <input type="submit" value="Submit">
+  </fieldset>
+</form>
+
+<p class="body">Results:{{count}}</p>
+
+<div class="body">
+                <table class="table table-striped" id="results">
+          <thead>
+            <tr>
+              <th scope="col">id</th>
+              <th scope="col">Title</th>
+              <th scope="col">Author</th>
+              <th scope="col">Language</th>
+	      <th scope="col">Year</th>
+	      <th scope="col">Label</th>
+            </tr>
+          </thead>
+          <tbody>
+              {% for result in results %}
+                <tr>
+                  <td>{{result[0]}}</td>
+                  <td>{{result[1]}}</td>
+		  <td>{{result[2]}}</td>
+    		  <td>{{result[3]}}</td>
+		  <td>{{result[4]}}</td>
+		  <td>{{result[5]}}</td>
+                </tr>
+              {% endfor%}
+          </tbody>
+        </table>
+    </div>
+{{results}}
+
+{% endblock %}

@@ -1,0 +1,53 @@
+{% extends "layout.html" %}
+{% block title %}
+    Update Library: Add
+{% endblock %}
+
+{% block main %}
+<div style="padding:20px">
+    <ul class="navbar">
+      <li><a href="/">Homepage</a></li>
+      <li><a href="/catalogue">Catalogue</a></li>
+      <li class="dropdown"><a href="javascript:void(0)" class="dropbtn">Search</a>
+        <div class="dropdown-content">
+          <a href="/search_title">Title</a>
+          <a href="/search_author">Author</a>
+          <a href="/search_label">Label</a>
+	  <a href="/search_lang">Language</a>
+        </div>
+      </li>
+      <li class="dropdown"><a href="javascript:void(0)" class="dropbtn active">Update</a>
+        <div class="dropdown-content">
+          <a href="/add_book">Add Book</a>
+          <a href="/delete_book">Remove Book</a>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+    
+    <h1 class="body">Update the Library, add a new book!</h1>
+<form action="/add_book" class="body" method="post">
+  <fieldset>
+    <legend>Add new Book:</legend>
+    <label for="fname">Title:</label><br>
+    <input type="text" id="fname" name="title"><br><br>
+    <label for="fname">Author:</label><br>
+    <input type="text" id="fname" name="author"><br><br>
+    <label for="fname">Year:</label><br>
+    <input type="text" id="fname" name="year"><br><br>
+    <label for="fname">Labels:</label><br>
+    <input type="text" id="fname" name="label"><br><br>
+    <label for="cars">Choose a Language:</label>
+    <select name="lang">
+    <option value="english">English</option>
+    <option value="spanish">Spanish</option>
+    <option value="french">French</option>
+    <option value="german">German</option>
+    <option value="other">Other</option>
+    </select>
+    <input type="submit" value="Submit">
+  </fieldset>
+</form>
+	
+{% endblock %}

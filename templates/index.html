@@ -1,0 +1,34 @@
+{% extends "layout.html" %}
+{% block title %}
+    Homepage
+{% endblock %}
+
+{% block main %}
+  <div style="padding:20px">
+    <ul class="navbar">
+      <li><a class="active" href="/">Homepage</a></li>
+      <li><a href="/catalogue">Catalogue</a></li>
+      <li class="dropdown"><a href="javascript:void(0)" class="dropbtn">Search</a>
+        <div class="dropdown-content">
+          <a href="/search_title">Title</a>
+          <a href="/search_author">Author</a>
+          <a href="/search_label">Label</a>
+	  <a href="/search_lang">Language</a>
+        </div>
+      </li>
+      <li class="dropdown"><a href="javascript:void(0)" class="dropbtn">Update</a>
+        <div class="dropdown-content">
+          <a href="/add_book">Add Book</a>
+          <a href="/delete_book">Remove Book</a>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+  <!-- Display image of homepage -->
+  <h1 class="body welcome">Welcome to MyLibrary!</h1>
+  <p class="body abstract">MyLibrary is a web-based application to manage and make searches
+ through a Library database. One can search by title, author, language or label (Field). One can also upload/remove
+books from the catalogue.</p>
+  <img src="https://www.eriereader.com/image/scale/auto/auto/articles/563717_liz-allen-library-aisle.jpg" alt="test" class="img body" style="width:1000px;height:1000px;text-align:center;">
+{% endblock %}

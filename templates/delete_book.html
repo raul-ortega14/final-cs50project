@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+{% block title %}
+    Update Library: Remove
+{% endblock %}
+
+{% block main %}
+<div style="padding:20px">
+    <ul class="navbar">
+      <li><a href="/">Homepage</a></li>
+      <li><a href="/catalogue">Catalogue</a></li>
+      <li class="dropdown"><a href="javascript:void(0)" class="dropbtn">Search</a>
+        <div class="dropdown-content">
+          <a href="/search_title">Title</a>
+          <a href="/search_author">Author</a>
+          <a href="/search_label">Label</a>
+	  <a href="/search_lang">Language</a>
+        </div>
+      </li>
+      <li class="dropdown"><a href="javascript:void(0)" class="dropbtn active">Update</a>
+        <div class="dropdown-content">
+          <a href="/add_book">Add Book</a>
+          <a href="/delete_book">Remove Book</a>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+    
+    <h1 class="body">Removing book from Library:</h1>
+<form action="/delete_book" class="body" method="post">
+  <fieldset>
+    <legend>Delete by ID:</legend>
+    <label for="fname">Enter ID:</label><br>
+    <input type="integer" id="fname" name="ident"><br><br>
+    <input type="submit" value="Submit">
+  </fieldset>
+</form>
+	
+{% endblock %}
